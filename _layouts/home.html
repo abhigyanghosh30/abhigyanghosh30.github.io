@@ -8,9 +8,9 @@ layout: base
 {{post.title}}
 {% endcapture %}
 {% capture post_para %}
-{{post.content}}
+{{ post.content | truncatewords: 30 }}
 {% endcapture %}
 {% include card.html title=post_title para=post_para %}
 {% endfor %}
 {% endcapture %}
-{% include strip.html type="dark" para=strip_content %}
+{% include strip.html type="light" para=strip_content %}
