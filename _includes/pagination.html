@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12">
+        <div class="u-fixed-width">
+            <nav class="p-pagination" aria-label="Pagination">
+                <ol class="p-pagination__items u-align--center">
+                    {% if paginator.previous_page %}
+                    <li class="p-pagination__item">
+                        <a class="p-pagination__link--previous" href="{{ paginator.previous_page_path }}" title="Previous page"><i class="p-icon--chevron-down">Previous page</i></a>
+                    </li>
+                    {% else %}
+                    <li class="p-pagination__item">
+                        <span class="p-pagination__link--previous is-disabled" aria-disabled="true"><i class="p-icon--chevron-down">Previous page</i></span>
+                    </li>
+                    {% endif %}
+                    {% for page in (1..paginator.total_pages) %}
+                    {% if page == 1 and page==paginator.page %}
+                    <li class="p-pagination__item">
+                    <a class="p-pagination__link is-active" href="{{ '/' | relative_url }}" aria-label="Page {{page}}">{{page}}</a>
+                    </li>
+                    {% elsif page == 1 %}
+                    <li class="p-pagination__item">
+                        <a class="p-pagination__link" href="{{ '/' | relative_url }}" aria-label="Page {{page}}">{{page}}</a>
+                    </li>
+                    {% elsif page == paginator.page %}
+                    <li class="p-pagination__item">
+                        <a class="p-pagination__link is-active" href="{{ site.paginate_path | relative_url | replace: ':num', page }}" aria-label="Page {{page}}">{{page}}</a>
+                    </li>            
+                    {% else %}
+                    <li class="p-pagination__item">
+                        <a class="p-pagination__link" href="{{ site.paginate_path | relative_url | replace: ':num', page }}" aria-label="Page {{page}}">{{page}}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if paginator.next_page %}
+                    <li class="p-pagination__item">
+                        <a class="p-pagination__link--next" href="{{paginator.next_page_path}}" title="Next page"><i class="p-icon--chevron-down">Next page</i></a>
+                    </li>
+                    {% else %}
+                    <li class="p-pagination__item">
+                        <span class="p-pagination__link--next is-disabled" aria-disabled="true"><i class="p-icon--chevron-down">Next page</i></span>
+                    </li>
+                    {% endif %}
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
