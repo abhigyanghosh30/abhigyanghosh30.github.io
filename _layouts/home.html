@@ -9,6 +9,9 @@ layout: base
 {% endcapture %}
 {% capture post_para %}
 {{ post.content | truncatewords: 30 }}
+<a href="{{post.url}}">
+READ MORE
+</a>
 {% endcapture %}
 {% include card.html title=post_title para=post_para %}
 {% endfor %}
