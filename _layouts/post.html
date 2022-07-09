@@ -2,8 +2,13 @@
 layout: base
 ---
 {% include strip.html type="suru-top" title=page.title %}
+
+
 <div class="row">
-	<div class="col-8">
+    <div class="col-8">
+        {% for tag in page.tags %}
+        {% include chip.html value=tag %}
+        {% endfor %}
         {{content}}
     </div>
 </div>
