@@ -1,0 +1,29 @@
+{% if include.type=="light" %}
+<section class="p-strip--light">
+    <div class="row">
+      <div class="col-12">
+        <p>{{include.para}}</p>
+      </div>
+    </div>
+</section>
+{% elsif include.type=="dark" %}
+<section class="p-strip--dark">
+    <div class="row">
+      <div class="col-12">
+        <p>{{include.para}}</p>
+      </div>
+    </div>
+</section>
+{% elsif include.type=="suru" %}
+<section class="p-strip--suru">
+    <div class="row u-vertically-center {{include.rowClassName}} ">
+      <div class="{{include.colSize}}">
+        <h1>{{include.title}}</h1>
+        <p>{{include.para}}</p>
+        {% if include.button %}
+        <button>{{include.button}}</button>
+        {% endif %}
+      </div>
+    </div>
+</section>
+{% endif %}

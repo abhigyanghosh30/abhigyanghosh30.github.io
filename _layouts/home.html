@@ -1,0 +1,16 @@
+---
+layout: base 
+---
+{% include strip.html type="suru" title="Welcome to Abhigyan Ghosh's blog" %}
+{% capture strip_content %}
+{% for post in site.posts %}
+{% capture post_title %}
+{{post.title}}
+{% endcapture %}
+{% capture post_para %}
+{{post.content}}
+{% endcapture %}
+{% include card.html title=post_title para=post_para %}
+{% endfor %}
+{% endcapture %}
+{% include strip.html type="dark" para=strip_content %}
