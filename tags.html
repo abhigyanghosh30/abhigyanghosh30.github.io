@@ -1,0 +1,21 @@
+---
+layout: base
+title: Tags
+---
+<div class="row">
+    <div class="col-8">
+        <ul class="p-list-tree" aria-multiselectable="true" role="tree">
+            {% for tag in site.tags %}
+            <li class="p-list-tree__item p-list-tree__item--group" role="treeitem">
+                <button class="p-list-tree__toggle" id="{{tag[0]}}-btn" aria-controls="{{tag[0]}}" aria-expanded="false">{{tag[0]}}</button>
+                <ul class="p-list-tree" role="group" id="{{tag[0]}}" aria-hidden="true" aria-labelledby="{{tag[0]}}-btn">
+                    {% for post in tag[1] %}
+                        <li class="p-list-tree__item" role="treeitem"><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<script src="{{site.baseurl}}/assets/js/tags.js"></script>

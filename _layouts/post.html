@@ -7,7 +7,7 @@ layout: base
 <div class="row">
     <div class="col-8">
         {% for tag in page.tags %}
-        {% include chip.html value=tag %}
+        <a href="{{site.baseurl}}/tags#{{tag}}">{% include chip.html value=tag %}</a>
         {% endfor %}
         {{content}}
     </div>
