@@ -10,6 +10,6 @@ layout: base
         <a href="{{site.baseurl}}/tags#{{tag}}">{% include chip.html value=tag %}</a>
         {% endfor %}
         {{content}}
+        {% include giscus.html %}
     </div>
 </div>
-
