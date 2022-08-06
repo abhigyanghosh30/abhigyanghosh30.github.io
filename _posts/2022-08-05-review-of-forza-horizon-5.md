@@ -2,7 +2,7 @@
 layout: post
 title: "Review of Forza Horizon 5"
 date: 2022-08-05 16:41:48 +0530
-tags: review personal
+tags: review personal opinion games
 ---
 
 > Forza Horizon 5 is the latest in the long running Forza Horizon series. It is published by Xbox Game Studios. The game is set in a fictional version of Mexico.
